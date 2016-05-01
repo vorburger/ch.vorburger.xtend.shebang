@@ -1,6 +1,10 @@
 plugins {
   id 'org.xtext.xtend' version '1.0.4'
+  id 'application'
 }
+
+ext.mainClass = project.hasProperty('mainClass') ? project.getProperty('mainClass') : 'ch.vorburger.xtend.shebang.lib.NoMainMain'
+mainClassName = ext.mainClass
 
 repositories.jcenter()
 

@@ -1,6 +1,6 @@
 class Main {
 
-   def static main() {
+   def static void main(String[] args) {
      println("hello, world")
    }
 

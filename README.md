@@ -91,8 +91,9 @@ We can even make a single simple script file depend on any Java library:
 
 == TODO
 
-* install/gradle/wrapper/* created by gradle --wrapper
-* try it simply ./xtend demo/Util.xtend
+* change hard-coded Main class name to parse from CLI; get ./demo/hello.xtends shebang working
+* careful re. current directory.. test. Try source set pointing to original, instead of copy?
+* instead of my own script, use https://docs.gradle.org/current/userguide/application_plugin.html#N15F30 ?
 * make a https://asciinema.org
 * allow #! as // in *.xtend, at least in first line, see https://en.wikipedia.org/wiki/Shebang_(Unix)  (and so *.xtends => *.xtend, NOT or new Xbase DSL)
 * POC class ch.vorburger.xtend.shebang.lib.Main, with xtend bash calling that instead and just pass arg, so that args and --server and --ide handled can be handled in Java instead shell
@@ -111,3 +112,4 @@ We can even make a single simple script file depend on any Java library:
 * CLI commands syntax completion; e.g. for zsh, how to?
 * Windows support... Is this a problem: "warning: CRLF will be replaced by LF in install/gradle/gradlew.bat. The file will have its original line endings in your working directory."
 * https://www.eclipse.org/forums/index.php/t/689396/ ?
+
