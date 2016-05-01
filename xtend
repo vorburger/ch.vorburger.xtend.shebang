@@ -1,11 +1,10 @@
-#!/bin/bash
-# ? #!/usr/bin/env bash
+#!/usr/bin/env bash
+set -e
+set -x
 
-# This is a bash script for now,
-# but later shall be a native wrapper written in Go
-# so that this works cross-platform
+# Tx/ACK Gradle; this is heavily inspired by https://github.com/gradle/gradle/blob/master/gradlew
 
-# TODO how-to fail if sth. fails, same stuff I did for Docker scripts
+# TODO Win xtend.bat variant (or later make it be a native wrapper written in Go?)
 
 $XTENDS_HOME=~/.cache/.xtends
 

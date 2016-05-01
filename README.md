@@ -1,6 +1,11 @@
-= #!xtend Script
+= #!xtend Script (AKA ch.vorburger.xtend.shebang)
 
 This project IS A DREAM (spec) TO MAYBE allow (xtend-lang.org)Xtend to be used for scripting, like this:
+
+TODO video
+
+
+Here are step-by-step instructions for what the video above demonstrates:
 
 Install #!xtend one time as follows: 
 
@@ -9,7 +14,7 @@ Install #!xtend one time as follows:
 
 
 Main.xtend:
-   $ xtend demo/Main.xtend
+   $ ./xtend demo/Main.xtend
    hello, world
 
 
@@ -36,6 +41,14 @@ hello2:
    $ ./hello2 you
    hello, you
 
+
+We can run a web server:
+
+?include demo/index
+   $ index --server
+   HTTP server now running on http://localhost:5050 ... Ctrl-D to shut down.
+   $ http http://localhost:5050
+   <html><body>hello, world</body></html>
 
 We can define sub-commands in the script:
 
@@ -77,16 +90,23 @@ We can even make a single simple script file depend on any Java library:
 
 
 == TODO
+
 * install/gradle/wrapper/* created by gradle --wrapper
 * try it simply ./xtend demo/Util.xtend
-* make all of above work! ;-)
+* make a https://asciinema.org
+* allow #! as // in *.xtend, at least in first line, see https://en.wikipedia.org/wiki/Shebang_(Unix)  (and so *.xtends => *.xtend, NOT or new Xbase DSL)
+* POC class ch.vorburger.xtend.shebang.lib.Main, with xtend bash calling that instead and just pass arg, so that args and --server and --ide handled can be handled in Java instead shell
+* POC double indirection? xtend: #!/usr/bin/env ch.vorburger.xtend.shebang.Main which is itself a Xtend script, to chop off first line, auto-update, handle args, etc.
+* make ./xtend script very short, contain almost nothing, and delegate to HTTP DL'd auto-update/able real impl
 * tests/ based on ch.vorburger.exec run above
-* allow #! as // in *.xtend and *.xtends => *.xtend, or new Xbase DSL?
+* make all of above work! ;-)
 * CLI commands, using that library from minecraft
+* demo/index.xtend web server (not yet REST API)
+* HoTea support in web server, based on gradle --continuous
 * REST API web server built-in
 * web editor: xtend-web *.xtends -> open browser!
 * generate this README; fixed text, and program execution from live run
+* automatically re-generate the asciicinema screencast from above
 * CLI commands with man-like --help
-* CLI commands syntax completion
-* make ./xtend script very short, contain almost nothing, and delegate to HTTP DL'd auto-update/able real impl
-
+* CLI commands syntax completion; e.g. for zsh, how to?
+* https://www.eclipse.org/forums/index.php/t/689396/
