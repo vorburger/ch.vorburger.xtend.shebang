@@ -6,8 +6,10 @@ set -x
 
 # TODO Win xtend.bat variant (or later make it be a native wrapper written in Go?)
 
-$XTENDS_HOME=~/.cache/.xtends
+# TODO XTENDS_CACHE
+XTENDS_HOME=$HOME/.cache/.xtends
 
+# TODO XTENDS_HOME
 XTENDS_INSTALL=install
 # TODO distinguish testing dog fooding and real script
 # XTENDS_INSTALL=$XTENDS_HOME/INSTALL
@@ -20,13 +22,14 @@ SCRIPT_BUILD_DIR=$XTENDS_HOME/demo
 MAIN_CLASS_NAME=hello
 
 # TODO how-to only if these files don't exist yet at source..
-mkdir -p $SCRIPT_BUILD_DIR
-cp -R $XTENDS_INSTALL/gradle/gradlew $SCRIPT_BUILD_DIR
-cp -R $XTENDS_INSTALL/gradle/wrapper/*.jar $SCRIPT_BUILD_DIR/gradle/wrapper
-cp -R $XTENDS_INSTALL/gradle/build.gradle $SCRIPT_BUILD_DIR
+mkdir -p $SCRIPT_BUILD_DIR/gradle/wrapper
+cp $XTENDS_INSTALL/gradle/gradlew $SCRIPT_BUILD_DIR
+cp $XTENDS_INSTALL/gradle/gradle/wrapper/* $SCRIPT_BUILD_DIR/gradle/wrapper/
+cp $XTENDS_INSTALL/gradle/build.gradle $SCRIPT_BUILD_DIR
 
 cp $0 $SCRIPT_BUILD_DIR
 # TODO how-to later chop off first line so that it becomes valid Xtend.. shell, or Gradle plugin already?
 
-$SCRIPT_BUILD_DIR/gradlew -d -task exec $MAIN_CLASS_NAME $*
+# TODO -task exec $MAIN_CLASS_NAME $*
+$SCRIPT_BUILD_DIR/gradlew --daemon
 

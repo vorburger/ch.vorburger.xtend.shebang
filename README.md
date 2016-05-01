@@ -109,4 +109,5 @@ We can even make a single simple script file depend on any Java library:
 * automatically re-generate the asciicinema screencast from above
 * CLI commands with man-like --help
 * CLI commands syntax completion; e.g. for zsh, how to?
-* https://www.eclipse.org/forums/index.php/t/689396/
+* Windows support... Is this a problem: "warning: CRLF will be replaced by LF in install/gradle/gradlew.bat. The file will have its original line endings in your working directory."
+* https://www.eclipse.org/forums/index.php/t/689396/ ?
