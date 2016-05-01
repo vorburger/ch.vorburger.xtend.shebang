@@ -1,0 +1,13 @@
+#!xtend
+
+/** Prints a thing. **/
+def thing() {
+  println("thing")
+}
+
+/** Counts to n. **/
+def thang(int n) {
+  for (i in 1..n)
+    print(i + ' ')
+}
+

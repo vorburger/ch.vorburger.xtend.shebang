@@ -1,0 +1,15 @@
+plugins {
+  id 'org.xtext.xtend' version '1.0.4'
+}
+
+repositories.jcenter()
+
+dependencies {
+  compile 'org.eclipse.xtend:org.eclipse.xtend.lib:2.9.2'
+}
+
+compileJava.options.encoding = 'UTF-8'
+// TODO how to source path = .
+
+// TODO exec main() ?
+

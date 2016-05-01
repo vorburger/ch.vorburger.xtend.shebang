@@ -1,0 +1,4 @@
+#!xtend
+
+println '''hello, <<args[0]>>'''
+

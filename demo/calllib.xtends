@@ -1,0 +1,7 @@
+#!xtend
+
+@Dependency('com.google:guava:18') // ?
+
+println(Guava.version()) // ?
+
+
